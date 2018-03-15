@@ -70,20 +70,16 @@ public class Trie
 
 		if (c == '.')
 		{
-			boolean result = false;
 			for (TrieNode child : node.children)
 			{
 				if (child != null)
 				{
 					if (searchWC(child, word, index + 1))
 					{
-						result = true;
-						break;
+						return true;						
 					}				
 				}
 			}
-			if (result)
-				return true;
 		}
 		else
 		{
